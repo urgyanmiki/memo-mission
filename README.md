@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+# Memo Mission
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A customizable memory game built with React.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Memo Mission is a simple React game with the following requirements
+- Render memory cards that can be swapped.
+- If a pair is found, leave it swapped.
+- If it's not a match, auto-swap back within a specified interval.
+- Implement a countdown timer that starts when the game begins and stops
+when the game ends.
+- Implement animations for card swapping to enhance the user experience.
+- The cards should be shuffled before every game
+- Create a settings form for the game
+- Allow users to define: The number of cards, Countdown time in seconds, Number of bad guesses
 
-## Expanding the ESLint configuration
+## Tech Stack
+- [React](https://react.dev/) – UI library for building interactive user interfaces
+- [Vite](https://vitejs.dev/) – Fast development server and build tool
+- [TypeScript](https://www.typescriptlang.org/) – Typed superset of JavaScript
+- [Redux Toolkit](https://redux-toolkit.js.org/) – State management for React apps
+- [Font Awesome](https://fontawesome.com/) – Icon library for scalable vector icons
+- [JavaScript (ES6+)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Modern JavaScript features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Install dependencies:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+   ```bash
+   npm install
+2. Run the development server:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```bash
+   npm run dev
+3. Test the app
+   ```bash
+   npm run test
+## Screenshots
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Listing the cards
+![App Screenshot](./screenshots/page-load.jpg)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Keeping swapped cards
+![App Screenshot](./screenshots/swapped.jpg)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Game settings
+![App Screenshot](./screenshots/settings.jpg)
+
+Won the game
+![App Screenshot](./screenshots/win.jpg)
+
+Lose the game
+![App Screenshot](./screenshots/lose.jpg)
